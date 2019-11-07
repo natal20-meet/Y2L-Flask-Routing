@@ -14,6 +14,20 @@ def home():
 def store():
 	return render_template('store.html')
 
+@app.route('/cart')
+def cart():
+	return render_template('cart.html')
+
+@app.route('/cart/<name>')
+def cart(name):
+	
+	return render_template('store.html', product = name)
+
+
+
+
+
+
 
 #####################
 

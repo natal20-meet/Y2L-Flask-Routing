@@ -10,14 +10,17 @@ Base.metadata.create_all(engine)
 DBSession = sessionmaker(bind=engine)
 session = DBSession()
 
-def add_product(name,price,description,picture):
+def add_product(name,price,Description,picture):
 	product_object = Product(
 	        name=name,
 	        price=price,
-	        description=description,
+	        Description=Description,
 	        picture=picture)
-	    session.add(product_object)
-	    session.commit() 
+	session.add(product_object)
+	session.commit() 
+
+# add_product("old record", 20 , "an old unknown record, buy it and try it", "heres a pic" )
+
 
 def edit_product(ID, description):
 	product_object = session.query(Product).filter_by(id=ID).first()

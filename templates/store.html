@@ -5,14 +5,19 @@
 </head>
 <body>
 welcome to the store where you can buy our products
-{{product}}
-<div class="card">
-  <img src="static/frank-sinatra-record.jpg" alt="Denim Jeans" style="width:50%">
-  <h1>Come fly with me frank sintra record</h1>
+
+{%for product in products%}
+
+<div class="Prod_card">
+  <img src="{{product.picture}}" alt="Denim Jeans" style="width:50%">
+  <h1>{{product.description}}</h1>
   <p class="price">$30.00</p>
   <p>come fly with me record by frank sinatra</p>
-  <p><a href= {{ url_for('cart') }} > <button>Add to Cart</button></a></p>
+
+
+  <p><a href="/cart/{{product.id}}" > <button>Add to Cart</button></a></p>
 </div>
+
 <a href= {{ url_for('home') }}  > Click Here to get to the home page </a>
 <a href= {{ url_for('cart') }}  > Click Here to find your products </a>
 

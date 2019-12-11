@@ -11,33 +11,22 @@ app.secret_key = "MY_SUPER_SECRET_KEY"
 def home():
 	return render_template("home.html")
 
-@app.route('/store', methods=['GET', 'POST'])
+@app.route('/store')
 def store():
-
 	products = query_products()
 	return render_template('store.html', products = products)
 @app.route('/about')
 def about():
 	return render_template('about.html')
 
-@app.route('/cart/<name>')
-def cart(name):
-	if request.method == 'GET':
-		return render_template('/cart')
-
-	else:
-		add_product(name,)
-		return render_template ('/store')
-
-	return render_template('store.html', product = name)
+@app.route('/cart/<float:id>')
+def cart(id):
+	add_to_cart(productID) 
+	return render_template('store.html', product = productID)
 
 @app.route('/login')
 def login():
 	return render_template('login.html')
-
-
-
-
 
 
 

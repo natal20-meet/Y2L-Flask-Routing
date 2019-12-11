@@ -2,13 +2,13 @@ from model import *
 
 
 from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker
+from sqlalchemy.orm import sessionmaker,scoped_session 
 
 
 engine = create_engine('sqlite:///database.db')
 Base.metadata.create_all(engine)
 DBSession = sessionmaker(bind=engine)
-session = DBSession()
+session = scoped_session(sessionmaker(bind=engine,autoflush=False))
 
 def add_product(name,price,Description,picture):
 	product_object = Product(
@@ -22,7 +22,7 @@ def add_product(name,price,Description,picture):
 # add_product("old record", 20 , "an old unknown record, buy it and try it", "heres a pic" )
 
 
-def edit_product(ID, description):
+def edit_product(ID, Description):
 	product_object = session.query(Product).filter_by(id=ID).first()
 	product_object.description = description
 	session.commit()

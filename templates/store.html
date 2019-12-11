@@ -8,15 +8,16 @@ welcome to the store where you can buy our products
 
 {%for product in products%}
 
-<div class="Prod_card">
-  <img src="{{product.picture}}" alt="Denim Jeans" style="width:50%">
-  <h1>{{product.description}}</h1>
-  <p class="price">$30.00</p>
-  <p>come fly with me record by frank sinatra</p>
 
+  <img src="{{product.picture}}" alt="" style="width:50%">
+  <p>{{product.name}}</p>
+  <p>{{product.description}}</p>
+  <p class="price">{{product.price}}</p>
 
   <p><a href="/cart/{{product.id}}" > <button>Add to Cart</button></a></p>
-</div>
+
+ 
+{%endfor%}
 
 <a href= {{ url_for('home') }}  > Click Here to get to the home page </a>
 <a href= {{ url_for('cart') }}  > Click Here to find your products </a>

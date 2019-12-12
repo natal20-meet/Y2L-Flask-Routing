@@ -19,7 +19,7 @@ def add_product(name,price,Description,picture):
 	session.add(product_object)
 	session.commit() 
 
-# add_product("old record", 20 , "an old unknown record, buy it and try it", "heres a pic" )
+add_product("frank sinatra record", 20 , "come fly with me record", "frank_sinatra_record.jpg" )
 
 
 def edit_product(ID, Dsescription):

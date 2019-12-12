@@ -9,18 +9,18 @@ welcome to the store where you can buy our products
 {%for Product in products%}
 
 
-  <img src="{{product.picture}}" alt="" style="width:50%">
-  <p>{{product.name}}</p>
-  <p>{{product.description}}</p>
-  <p class="price">{{product.price}}</p>
+  <img src="/static/{{Product.picture}}" alt="" style="width:50%">
+  <p>{{Product.name}}</p>
+  <p>{{Product.Description}}</p>
+  <p class="price">{{Product.price}}</p>
 
-  <p><a href="/cart/{{product.ID}}" > <button>Add to Cart</button></a></p>
+  <p><a href="/cart/{{Product.ID}}" > <button>Add to Cart</button></a></p>
 
  
 {%endfor%}
 
 <a href= {{ url_for('home') }}  > Click Here to get to the home page </a>
-<!-- <a href= {{ url_for('cart') }}  > Click Here to find your products </a> -->
+<a href= {{ url_for('cart') }}  > Click Here to find your products </a> 
 
 </body>
 </html>

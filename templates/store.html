@@ -6,7 +6,7 @@
 <body>
 welcome to the store where you can buy our products
 
-{%for product in products%}
+{%for Product in products%}
 
 
   <img src="{{product.picture}}" alt="" style="width:50%">
@@ -14,13 +14,13 @@ welcome to the store where you can buy our products
   <p>{{product.description}}</p>
   <p class="price">{{product.price}}</p>
 
-  <p><a href="/cart/{{product.id}}" > <button>Add to Cart</button></a></p>
+  <p><a href="/cart/{{product.ID}}" > <button>Add to Cart</button></a></p>
 
  
 {%endfor%}
 
 <a href= {{ url_for('home') }}  > Click Here to get to the home page </a>
-<a href= {{ url_for('cart') }}  > Click Here to find your products </a>
+<!-- <a href= {{ url_for('cart') }}  > Click Here to find your products </a> -->
 
 </body>
 </html>

@@ -14,15 +14,15 @@ def home():
 @app.route('/store')
 def store():
 	products = query_products()
-	return render_template('store.html', products = products)
+	return render_template('store.html')
 @app.route('/about')
 def about():
 	return render_template('about.html')
 
-@app.route('/cart/<float:id>')
-def cart(id):
+@app.route('/cart/<float:ID>')
+def cart(ID):
 	add_to_cart(productID) 
-	return render_template('store.html', product = productID)
+	return render_template('store.html', product = ID)
 
 @app.route('/login')
 def login():

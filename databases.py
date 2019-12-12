@@ -22,13 +22,13 @@ def add_product(name,price,Description,picture):
 # add_product("old record", 20 , "an old unknown record, buy it and try it", "heres a pic" )
 
 
-def edit_product(ID, Description):
-	product_object = session.query(Product).filter_by(id=ID).first()
+def edit_product(ID, Dsescription):
+	product_object = session.query(Product).filter_by(ID=ID).first()
 	product_object.description = description
 	session.commit()
 
 def delete_product(ID):
-	product_object = session.query(Product).filter_by(id=ID).delete()	
+	product_object = session.query(Product).filter_by(ID=ID).delete()	
 	session.commit()
 
 def query_products():
@@ -37,7 +37,7 @@ def query_products():
 
 
 def query_by_name(ID):
-	products = session.query(Product).filter_by(id=ID).first()
+	products = session.query(Product).filter_by(ID=ID).first()
 	return products
 
 def add_to_cart(productID):

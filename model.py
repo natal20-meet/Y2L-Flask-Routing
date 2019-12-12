@@ -6,12 +6,12 @@ Base = declarative_base()
 
 class Product(Base):
    __tablename__ = 'products'
-   id = Column(Integer, primary_key=True)
+   ID = Column(Integer, primary_key=True)
    name = Column(String)
    price = Column(Integer)
    picture = Column(String)
    Description = Column(String)
 class Cart(Base):
 	__tablename__ = 'Cart'
-	id = Column(Integer, primary_key = True)
+	ID = Column(Integer, primary_key = True)
 	productID = Column(Integer)
